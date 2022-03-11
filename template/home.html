@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>聊天室 —— Go语言编程之旅</title>
+    <title>mini聊天室</title>
 
     <link href="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -29,7 +29,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="page-header">
-                <h2 class="text-center">欢迎来到《Go 语言编程之旅：一起用 Go 做项目》聊天室</h2>
+                <h2 class="text-center">欢迎来到mini聊天室</h2>
             </div>
         </div>
     </div>
@@ -39,9 +39,9 @@
             <div>聊天内容</div>
             <div class="msg-list" id="msg-list">
                 <div class="message"
-                     v-for="msg in msglist"
-                     v-bind:class="{ system: msg.type>0, myself: msg.user.nickname==curUser.nickname }"
-                >
+                    v-for="msg in msglist"
+                    v-bind:class="{ system: msg.type>0, myself: msg.user.nickname==curUser.nickname }"
+                    >
                     <div class="meta" v-if="msg.type==0"><span class="author">${ msg.user.nickname }</span> at ${ formatDate(msg.msg_time) } ${ calc(msg) }</div>
                     <div>
                         <span class="content" style="white-space: pre-wrap;">${ msg.content }</span>
@@ -149,9 +149,9 @@
                             // 欢迎消息
                             that.curUser = data.user;
                             localStorage.setItem('user', JSON.stringify(data.user));
-
+                            
                             data.user = {nickname: '', uid: 0};
-
+                            
                             that.fetchUserList();
                         } else if (data.type == 2) {
                             // 某个用户进入
@@ -272,7 +272,7 @@
                 if (data.content == "") {
                     return;
                 }
-
+                
                 that = this;
                 if (data.ats != null) {
                     data.ats.forEach(function(nickname) {
