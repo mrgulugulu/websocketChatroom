@@ -9,6 +9,7 @@ import (
 	"wsChatroom/server"
 )
 
+// 参考自https://github.com/go-programming-tour-book/chatroom
 var (
 	addr   = ":2022"
 	banner = `
