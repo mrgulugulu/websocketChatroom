@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: chatroom-deployment
+spec:
+        replicas: 2
+        selector:
+                matchLabels:
+                        app: chatroom
+        template:
+                metadata:
+                 labels:
+                    app: chatroom
+                spec:
+                     containers:
+                     - name: chatroom
+                       image: hermanyep/chatroom
+                       ports:
+                               - containerPort: 2022
