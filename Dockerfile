@@ -15,5 +15,6 @@ FROM alpine
 WORKDIR /app
 
 COPY ./template ./template
+COPY ./config ./config
 COPY --from=build /go/src/app/chatroom ./
 ENTRYPOINT [ "./chatroom" ]
