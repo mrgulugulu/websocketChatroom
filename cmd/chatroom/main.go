@@ -18,7 +18,7 @@ var (
    |    |____|  /  \    | 
    |    |    | /----\   |
    |____|    |/      \  |
-Go语言编程之旅 —— 一起用Go做项目：ChatRoom，start on：%s
+miniChatRoom，start on：%s
 `
 )
 
