@@ -13,5 +13,7 @@ RUN go build ./cmd/chatroom
 
 FROM alpine 
 WORKDIR /app
+
+COPY ./template ./template
 COPY --from=build /go/src/app/chatroom ./
 ENTRYPOINT [ "./chatroom" ]
